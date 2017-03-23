@@ -18,7 +18,7 @@ module.exports = function (elements) {
 
       // Note that all of the nodes referenced by this way should be kept.
       if (element.type === 'way') {
-        element.nodes.forEach(function (ref) {
+        (element.nodes || element.refs).forEach(function (ref) {
           keepNodeRefs[ref] = true
         })
       }
