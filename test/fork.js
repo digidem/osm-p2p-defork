@@ -1,6 +1,22 @@
 var test = require('tape')
 var defork = require('../')
 
+test('simple linear history', function (t) {
+  var input = [
+    { type: 'node',
+      lat: 63.9,
+      lon: -147.6,
+      timestamp: 100,
+      id: '2552852387437165718',
+      version: 'b46af8c3794cc2be4177821f6ecd0dc9f6b3684f24375a94435eeb19d21c1a34' }
+  ]
+
+  var actual = defork(input)
+
+  t.deepEqual(actual, input)
+  t.end()
+})
+
 // Contains two versions of a node inside a way; the one with the newer
 // timestamp should be included.
 test('forked nodes in a way (with timestamps)', function (t) {
