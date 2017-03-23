@@ -3,7 +3,7 @@ var defork = require('../')
 
 // Contains two versions of a node inside a way; the one with the newer
 // timestamp should be included.
-test('fork', function (t) {
+test('forked nodes in a way (with timestamps)', function (t) {
   var input = [
     { type: 'node',
       lat: 63.9,
