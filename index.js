@@ -5,7 +5,7 @@
 // Note that this will also filter out nodes belonging to ways that are
 // filtered.
 module.exports = function (elements) {
-  var latestFirst = elements.sort(cmpFork)
+  var latestFirst = elements.slice().sort(cmpFork)
   var nonForkedElements = []
   var keepNodeRefs = {}
   var excludeNodeRefs = {}
