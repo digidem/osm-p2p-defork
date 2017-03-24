@@ -49,15 +49,7 @@ module.exports = function (elements) {
     }
   })
 
-  // Sort by type
-  nonForkedElements.sort(cmpType)
-
   return nonForkedElements
-}
-
-var typeOrder = { node: 0, way: 1, relation: 2 }
-function cmpType (a, b) {
-  return typeOrder[a.type] - typeOrder[b.type]
 }
 
 /**
