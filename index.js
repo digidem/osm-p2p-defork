@@ -29,7 +29,7 @@ module.exports = function (elements) {
 
       // Note that all of the nodes referenced by this way should be culled.
       if (element.type === 'way') {
-        element.nodes.forEach(function (ref) {
+        (element.nodes || element.refs).forEach(function (ref) {
           excludeNodeRefs[ref] = true
         })
       }
